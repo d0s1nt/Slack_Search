@@ -76,7 +76,7 @@ for url in sites:
     try:
         team_email_domains = r.html.find('#page_contents > div > div:nth-child(3) > p > strong > span',first=True)
         results[f'{url}']['Accessible with Email'] = team_email_domains.text
-        if f'{brand_name}' in team_email_domains.text:
+        if brand_email in team_email_domains.text:
             results[f'{url}'][f'Accessible with {brand} Email Address'] = 'Yes'
         else:
             results[f'{url}'][f'Accessible with {brand} Email Address'] = 'No'
